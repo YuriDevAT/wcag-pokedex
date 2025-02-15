@@ -1,0 +1,176 @@
+:root {
+  /* Basic colors */
+  --color-black: black;
+  --color-grey: grey;
+  --color-white: white;
+
+  /* Body */
+  --body-bg: black;
+
+  /* Blue Button */
+  --blue-button-bg: #09a8ff;
+  --blue-button-border: #6c96e6;
+  --blue-button-gradient-1: rgba(128, 128, 128, 0.5);
+  --blue-button-gradient-2: rgba(138, 138, 138, 0.5);
+  --blue-button-gradient-3: rgba(230, 230, 230, 0.5);
+  --blue-button-gradient-4: rgba(255, 255, 255, 0.5);
+  --blue-button-gradient-5: rgba(220, 220, 220, 0.5);
+  --blue-button-gradient-6: rgba(230, 230, 230, 0.5);
+
+  /* Divider */
+  --divider-border: #460f0f;
+  --divider-child-border: #2d0d0d;
+
+  /* Down Arrow */
+  --down-arrow: yellow;
+
+  /* Empty Evo */
+  --empty-evo-gradient-1: #83887b;
+  --empty-evo-gradient-2: #8b8f81;
+  --empty-evo-gradient-3: #babfb1;
+
+  /* Evo Num */
+  --evo-num-textshadow: #e78181;
+
+  /* Fire */
+  --color-fire: #cf1414;
+
+  /* Fairy */
+  --color-fairy: #dca0ce;
+
+  /* Fighting */
+  --color-fighting: #d87c58;
+
+  /* Flying */
+  --color-flying: #999ade;
+
+  /* Ghost */
+  --color-ghost: #c195dc;
+
+  /* Grass */
+  --color-grass: #47a047;
+
+  /* Ground */
+  --color-ground: #dea761;
+
+  /* Ice */
+  --color-ice: #98c3de;
+
+  /* Normal */
+  --color-normal: #bfbfbf;
+
+  /* Poison */
+  --color-poison: #925192;
+
+  /* Psychic */
+  --color-psychic: #fa43b8;
+
+  /* Rock */
+  --color-rock: #897864;
+
+  /* Shadow */
+  --color-shadow: #364163;
+
+  /* Steel */
+  --color-steel: #49769c;
+
+  /* Unknown */
+  --color-unknown: #545454;
+
+  /* Water */
+  --color-water: #1689de;
+
+  /* Dragon */
+  --color-dragon: #89315d;
+
+  /* Dark */
+  --color-dark: #282433;
+
+  /* Electric */
+  --color-electric: #e6b700;
+
+  /* Bug */
+  --color-bug: #b1c967;
+
+  /* Psychic */
+  --color-psychic: #fa43b8;
+
+  /* Type */
+  --type-border: #757575;
+  --type-gradient-1: rgba(128, 128, 128, 0.5);
+  --type-gradient-2: rgba(138, 138, 138, 0.5);
+  --type-gradient-3: rgba(230, 230, 230, 0.5);
+  --type-gradient-4: rgba(255, 255, 255, 0.5);
+  --type-gradient-5: rgba(220, 220, 220, 0.5);
+  --type-gradient-6: rgba(230, 230, 230, 0.5);
+  --type-text: rgba(0, 0, 0, 0.9);
+
+  /* Panel */
+  --panel-border: #b31818;
+  --panel-row-border: #757575;
+  --pokedex-bg: #e61515;
+
+  /* Panel Header */
+  --panel-header-border: #e61515;
+  --panel-header-gradient-first: #460f0f;
+  --panel-header-gradient-second: #891313;
+  --panel-header-gradient-third: #b31818;
+  --panel-header-gradient-fourth: #fd5555;
+  --panel-header-gradient-fifth: #b31818;
+  --panel-header-textshadow: #fd5555;
+
+  /* Poke Ball */
+  --poke-ball-dot-border: #83887a;
+  --poke-ball-top: #83887a;
+
+  /* Screen */
+  --screen-border: #879a65;
+  --screen-gradient-end: rgb(193, 217, 144);
+  --screen-gradient-start: rgb(165, 205, 83);
+
+  /* Shiny Controls */
+  --shiny-border: #cdb589;
+  --shiny-gradient-1: #bf8823;
+  --shiny-gradient-2: #ffee90;
+  --shiny-gradient-3: #e6a617;
+  --shiny-gradient-4: #fff6c8;
+
+  /* Sprite Control */
+  --sprite-control-active: #f4fcb9;
+  --sprite-control-border: #b06868;
+  --sprite-control-hover: #b8ed7c;
+  --sprite-control-selected: #b8ed7c;
+
+  /* Sprite */
+  --pokemon-sprite-border: #9aa28b;
+  --sprite-gradient-1: #cad5b5;
+  --sprite-gradient-2: #dde2d4;
+  --sprite-gradient-3: #fff;
+
+  /* Button */
+  --button-after-border: #460f0f;
+  --button-active-gradient-1: rgb(229, 255, 181);
+  --button-active-gradient-2: rgb(204, 237, 124);
+  --button-active-gradient-3: rgb(103, 165, 64);
+  --button-active-gradient-4: rgb(66, 204, 40);
+  --button-border: rgb(248, 187, 187);
+  --button-gradient-1: rgb(218, 237, 241);
+  --button-gradient-2: rgb(124, 214, 237);
+  --button-gradient-3: rgb(64, 90, 165);
+  --button-gradient-4: rgb(43, 125, 196);
+  --button-hover-gradient-1: rgb(233, 241, 218);
+  --button-hover-gradient-2: rgb(184, 237, 124);
+  --button-hover-gradient-3: rgb(64, 165, 106);
+  --button-hover-gradient-4: rgb(43, 196, 145);
+
+  /* Move Arrow */
+  --move-arrow-active: rgb(244, 252, 185);
+  --move-arrow-hover: rgb(184, 237, 124);
+  --move-arrow-textshadow: #e78181;
+
+  /* Num Input & Submit */
+  --num-color: blue;
+  --submit-bg: #5ed75e;
+  --submit-border: #5f845e;
+  --submit-hover-border: #85ec4d;
+}

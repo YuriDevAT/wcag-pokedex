@@ -1,0 +1,631 @@
+@import './variables.css';
+
+header {
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: var(--color-white);
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button:focus, input:focus {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+body {
+  background-blend-mode: overlay;
+  background-color: var(--body-bg);
+  font-family: "Nunito-sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.pokedex {
+  background-color: var(--pokedex-bg);
+  border: double var(--color-black) 10px;
+  border-radius: 15px;
+  display: flex;
+  margin: 0 auto;
+  padding: 1em;
+  width: 848px;
+}
+
+.panel {
+  border: inset var(--panel-border) 3px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 359px;
+}
+
+.right-panel {
+  padding: 0;
+  width: 379px;
+}
+
+.panel-row {
+  border-bottom: groove var(--panel-row-border) 3px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.panel-row:last-child {
+  border-bottom: none;
+  border-top: groove var(--panel-row-border) 3px;
+}
+
+.divider {
+  align-items: center;
+  border: inset var(--divider-border) 4px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  width: 30px;
+}
+
+.divider>* {
+  border: solid var(--divider-child-border) 2px;
+  border-radius: 4px;
+}
+
+.hinge {
+  background: linear-gradient(90deg, var(--hinge-1) 0, var(--hinge-2) 30%, var(--hinge-3) 45%, var(--hinge-4) 65%, var(--hinge-3) 95%);
+  border-left-color: var(--hinge-left);
+  border-right-color: var(--hinge-4);
+  border-top-color: var(--hinge-4);
+  flex: 10;
+  width: 100%;
+}
+
+.gap:first-child {
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+}
+
+.gap:last-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.gap {
+  background: linear-gradient(90deg, var(--gap-start) 0, var(--gap-second) 30%, var(--gap-third) 45%, var(--gap-fourth) 65%, var(--gap-fifth) 95%);
+  border-right-color: var(--gap-third);
+  border-top-color: var(--gap-second);
+  flex: 1;
+  width: 95%;
+}
+
+.screen {
+  background: linear-gradient(14deg, var(--screen-gradient-start) 60%, var(--screen-gradient-end) 65%);
+  border: inset var(--screen-border) 3px;
+  border-radius: 3px;
+  font-family: "Roboto Mono", monospace;
+  padding: 5px;
+}
+
+.pokemon-name {
+  box-sizing: border-box;
+  font-size: 22px;
+  height: 45px;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+}
+
+.name-no {
+  float: right;
+  text-transform: lowercase;
+}
+
+.pokemon-description {
+  box-sizing: border-box;
+  flex: 1;
+  font-size: 14px;
+  letter-spacing: 0;
+  min-height: 115px;
+}
+
+.pokemon-sprite {
+  background: linear-gradient(15deg, var(--sprite-gradient-1) 64%, var(--sprite-gradient-2) 70%, var(--sprite-gradient-2) 81%, var(--sprite-gradient-3) 86%, var(--sprite-gradient-2) 89%, var(--sprite-gradient-2) 100%);
+  border: inset var(--pokemon-sprite-border) 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  image-rendering: pixelated;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.sprite-controls {
+  display: flex;
+  font-family: "Roboto Mono", monospace;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.sprite-control {
+  align-items: center;
+  border: groove var(--color-grey) 3px;
+  border-color: var(--sprite-control-border);
+  border-radius: 20px;
+  color: var(--color-black);
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  padding: 1px;
+  transform: rotate(60deg);
+  width: 30px;
+}
+
+.sprite-control>* {
+  transform: rotate(-60deg);
+}
+
+.sprite-control:active {
+  border-color: var(--sprite-control-active);
+}
+
+.sprite-control:hover {
+  border-color: var(--sprite-control-hover);
+}
+
+.sprite-control-selected {
+  border-color: var(--sprite-control-selected);
+}
+
+.sprite-controls-shiny {
+  background: linear-gradient(14deg, var(--shiny-gradient-1) 10%, var(--shiny-gradient-2) 25%, var(--shiny-gradient-3) 47%, var(--shiny-gradient-2) 73%, var(--shiny-gradient-4) 74%, var(--shiny-gradient-2) 80%);
+  border-color: var(--shiny-border);
+  text-shadow: var(--color-white) -1px 1px;
+  transform: rotate(0);
+  width: 90px;
+}
+
+.sprite-controls-shiny>* {
+  transform: rotate(0);
+}
+
+.pokemon-sprite-small {
+  height: 120px;
+  margin: 3px 0;
+  width: 120px;
+}
+
+/* types */
+.type {
+  align-self: center;
+  background: linear-gradient(15deg, var(--sprite-gradient-1) 64%, var(--sprite-gradient-2) 70%, var(--sprite-gradient-2) 81%, var(--sprite-gradient-3) 86%, var(--sprite-gradient-2) 89%, var(--sprite-gradient-2) 100%);
+  border: groove var(--type-border) 3px;
+  border-radius: 10px;
+  color: var(--type-text);
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25em;
+  letter-spacing: 2px;
+  padding: 2px;
+  text-align: center;
+  text-shadow: rgba(255, 255, 255, 0.3) -1px 1px;
+  text-transform: capitalize;
+  width: 150px;
+  background-blend-mode: hard-light;
+}
+
+.panel-header {
+  align-items: center;
+  background-color: inherit;
+  border: groove var(--panel-header-border) 3px;
+  border-width: 3px 2px;
+  display: flex;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25em;
+  justify-content: center;
+  letter-spacing: 2px;
+  padding: 5px;
+  text-shadow: var(--panel-header-textshadow) -1px 1px;
+  text-transform: capitalize;
+}
+
+.type-list {
+  border-left: groove var(--panel-row-border) 3px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.type-box {
+  background: linear-gradient(14deg, var(--sprite-gradient-1) 64%, var(--sprite-gradient-2) 70%, var(--sprite-gradient-2) 81%, var(--sprite-gradient-3) 86%, var(--sprite-gradient-2) 89%, var(--sprite-gradient-2) 100%);
+  border-top: groove var(--panel-row-border) 3px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+  width: 150px;
+}
+
+.stat-line {
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.panel-evo {
+  flex-wrap: wrap;
+}
+
+.empty-evo {
+  align-items: center;
+  background: linear-gradient(15deg, var(--empty-evo-gradient-1) 64%, var(--empty-evo-gradient-2) 70%, var(--empty-evo-gradient-2) 81%, var(--empty-evo-gradient-3) 86%, var(--empty-evo-gradient-2) 89%, var(--empty-evo-gradient-2) 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.poke-ball {
+  align-items: center;
+  background: var(--color-black);
+  border: solid var(--color-black) 4px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  opacity: 0.8;
+  overflow: hidden;
+  position: relative;
+  width: 50px;
+}
+
+.poke-ball-top {
+  background: var(--poke-ball-top);
+  flex: 1;
+  opacity: 0.3;
+  width: 100%;
+}
+
+.poke-ball-center {
+  align-items: center;
+  border: solid var(--color-black) 4px;
+  border-radius: 50%;
+  display: flex;
+  height: 22px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 22px;
+}
+
+.poke-ball-dot {
+  background: var(--color-black);
+  border: solid var(--poke-ball-dot-border) 6px;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.poke-ball-bottom {
+  flex: 1;
+  background: var(--poke-ball-top);
+  width: 100%;
+}
+
+.evo-header {
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+.evo-num {
+  border: none;
+  background: transparent;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25em;
+  letter-spacing: 2px;
+  text-shadow: var(--evo-num-textshadow) -1px 1px;
+}
+
+.evo-name {
+  margin-bottom: 3px;
+  padding: 3px;
+  text-align: right;
+  width: auto;
+}
+
+.blue-buttons {
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.blue-button {
+  background: linear-gradient(15deg, var(--blue-button-gradient-1) 64%, var(--blue-button-gradient-2) 70%, var(--blue-button-gradient-3) 81%, var(--blue-button-gradient-4) 86%, var(--blue-button-gradient-5) 89%, var(--blue-button-gradient-6) 100%);
+  background-blend-mode: hard-light;
+  background-color: var(--blue-button-bg);
+  border: groove var(--blue-button-border) 3px;
+  border-radius: 5px;
+  flex: 1 1 16%;
+  height: 30px;
+  margin: 3px;
+}
+
+.move-list {
+  display: flex;
+}
+
+.move-screen {
+  flex: 1;
+  margin: 3px;
+  padding: 10px 20px;
+}
+
+.move-head {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.move-name {
+  border-bottom: solid var(--color-black) 2px;
+  font-size: 18px;
+  margin-bottom: 3px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.move-stat {
+  font-size: 14px;
+}
+
+.move-type {
+  border: solid var(--color-black) 2px;
+  border-radius: 7px;
+  font-size: 14px;
+  padding: 2px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.move-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.move-learn {
+  float: right;
+  font-size: 14px;
+  margin-right: 3px;
+}
+
+.move-status {
+  margin-right: 3px;
+  margin-top: 3px;
+  text-transform: capitalize;
+}
+
+.move-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 10px 0 7px;
+}
+
+.move-arrow {
+  align-items: center;
+  border: groove var(--color-grey) 3px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  font-size: 37px;
+  height: 40px;
+  justify-content: center;
+  text-shadow: var(--move-arrow-textshadow) -1px 1px;
+  transform: rotate(60deg);
+  width: 40px;
+}
+
+.move-arrow>* {
+  transform: rotate(-60deg);
+}
+
+.move-arrow:first-child>* {
+  padding-bottom: 5px;
+}
+
+.move-arrow:last-child>* {
+  padding-top: 1px;
+}
+
+.move-arrow:hover {
+  border-color: var(--move-arrow-hover);
+}
+
+.move-arrow:active {
+  border-color: var(--move-arrow-active);
+}
+
+.down-arrow {
+  background: var(--down-arrow);
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.button {
+  border: outset var(--button-border) 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  transform: rotate(60deg);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle farthest-corner at 40% 25%,
+      var(--button-gradient-1) 9%,
+      var(--button-gradient-2) 20%,
+      var(--button-gradient-3) 62%,
+      var(--button-gradient-4) 100%);
+}
+
+.button:hover {
+  background: radial-gradient(circle farthest-corner at 40% 25%,
+      var(--button-hover-gradient-1) 9%,
+      var(--button-hover-gradient-2) 20%,
+      var(--button-hover-gradient-3) 62%,
+      var(--button-hover-gradient-4) 100%);
+}
+
+.button:active {
+  background: radial-gradient(circle farthest-corner at 40% 25%,
+      var(--button-active-gradient-1) 9%,
+      var(--button-active-gradient-2) 20%,
+      var(--button-active-gradient-3) 62%,
+      var(--button-active-gradient-4) 100%);
+}
+
+.button::after {
+  border: groove var(--button-after-border) 5px;
+  border-style: double;
+  border-radius: 50%;
+  content: "";
+  height: 60px;
+  left: -10px;
+  opacity: 0.75;
+  position: absolute;
+  top: -10px;
+  width: 60px;
+}
+
+.prev {
+  border-right: 30px solid var(--color-white);
+}
+
+.num {
+  color: var(--num-color);
+}
+
+.next {
+  border-left: 30px solid var(--color-white);
+}
+
+.num-input {
+  align-self: center;
+  font-size: 20px;
+  height: 30px;
+  text-align: right;
+  width: 50px;
+}
+
+.submit {
+  background-color: var(--submit-bg);
+  border: groove var(--submit-border) 3px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 18px;
+  margin-top: 3px;
+  width: 66px;
+}
+
+.submit:hover {
+  border-color: var(--submit-hover-border);
+}
+
+.normal {
+  background-color: var(--color-normal);
+}
+
+.fighting {
+  background-color: var(--color-fighting);
+}
+
+.flying {
+  background-color: var(--color-flying);
+}
+
+.poison {
+  background-color: var(--color-poison);
+}
+
+.ground {
+  background-color: var(--color-ground);
+}
+
+.rock {
+  background-color: var(--color-rock);
+}
+
+.bug {
+  background-color: var(--color-bug);
+}
+
+.ghost {
+  background-color: var(--color-ghost);
+}
+
+.steel {
+  background-color: var(--color-steel);
+}
+
+.fire {
+  background-color: var(--color-fire);
+}
+
+.water {
+  background-color: var(--color-water);
+}
+
+.grass {
+  background-color: var(--color-grass);
+}
+
+.electric {
+  background-color: var(--color-electric);
+}
+
+.psychic {
+  background-color: var(--color-psychic);
+}
+
+.ice {
+  background-color: var(--color-ice);
+}
+
+.dragon {
+  background-color: var(--color-dragon);
+}
+
+.dark {
+  background-color: var(--color-dark);
+}
+
+.fairy {
+  background-color: var(--color-fairy);
+}
+
+.unknown {
+  background-color: var(--color-unknown);
+}
+
+.shadow {
+  background-color: var(--color-shadow);
+}
