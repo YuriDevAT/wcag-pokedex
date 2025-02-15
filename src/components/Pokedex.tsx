@@ -3,6 +3,7 @@ import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
 import Divider from './Divider';
 import { Pokemon, Species, Evolution } from '../types';
+import Loading from './Loading';
 
 const POKEMON = 1;
 
@@ -82,6 +83,11 @@ const Pokedex: React.FC = () => {
 
   return (
     <div className="pokedex">
+      {loading && (
+      <div className="loading-overlay">
+        <Loading />
+      </div>
+    )}
       <LeftPanel 
         pData={pokemonData} 
         sData={speciesData} 

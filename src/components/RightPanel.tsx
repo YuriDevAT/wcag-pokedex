@@ -6,6 +6,7 @@ import ButtonChrome from './ButtonChrome';
 import MoveList from './MoveList';
 import PokedexControls from './PokedexControls';
 import { Pokemon, Species } from '../types';
+import Loading from './Loading';
 
 interface RightPanelProps {
   pData: Pokemon | null;
@@ -35,7 +36,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ pData, evoSprites, evoNames, co
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 };
 
